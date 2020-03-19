@@ -83,8 +83,8 @@ The origin of a PostScript starts at (0,0) in the lower left corner, with x-coor
 increasing to the top. To draw something, one builds a path, and then strokes it. The PostScript
 interpreter maintains a graphics state, which for our purposes consists of
 
-⋅⋅* A current point, (x,y) coordinate, which is initially undefined.
-⋅⋅* A current path.
+⋅⋅* A current point, (x,y) coordinate, which is initially undefined  
+⋅⋅* A current path  
 ⋅⋅* A current color, a 3-tuple (r,g,b), where each color intensity r,g,b is between 0 and 1 inclusive. (0,0,0) is
-black and (1,1,1) is white.
-⋅⋅* A current line thickness, which indicates the thickness of lines drawn when stroking.
+black and (1,1,1) is white  
+⋅⋅* A current line thickness, which indicates the thickness of lines drawn when stroking  
