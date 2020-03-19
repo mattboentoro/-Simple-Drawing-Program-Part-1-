@@ -25,6 +25,57 @@ Draw a line with one endpoint at (X0, Y0) and the second endpoint at (X1, Y1).
 ```
 Draw an outline of a rectangle whose lower left corner is at (X,Y), and which has a width of W and height
 of H. The rectangle should be drawn counter-clockwise starting from the lower left corner.
+```
+(filledrect X Y W H)
+```
+Same as rect, but fill the rectangle rather than simply drawing its boundary.
+```
+(filledrect X Y W H)
+```
+Same as rect, but fill the rectangle rather than simply drawing its boundary.
+```
+(tri X Y R)
+```
+Draw the outline of an equilateral triangle whose center is at (X, Y) with one of the vertices at (X + R, Y).  
+Draw the triangle counter-clockwise starting from (X + R, Y). This order applies to all the following
+picture elements.
+```
+(filledtri X Y R)
+```
+Same as tri, but fill the triangle rather than simply drawing its boundary.
+```
+(square X Y R)
+```
+Draw the outline of a square whose center is at (X, Y) with one of the vertices at (X + R, Y).
+```
+(filledsquare X Y R)
+```
+Same as square, but fill the square rather than simply drawing its boundary.
+```
+(penta X Y R)
+```
+Draw the outline of a regular pentagon whose center is at (X, Y) with one of the vertices at (X + R, Y).
+```
+(filledpenta X Y R)
+```
+Same as penta, but fill the pentagon rather than simply drawing its boundary.
+```
+(hexa X Y R)
+```
+Draw the outline of a regular hexagon whose center is at (X, Y) with one of the vertices at (X + R, Y).
+```
+(filledhexa X Y R)
+```
+Same as hexa, but fill the hexagon rather than simply drawing its boundary.
+```
+(ngon X Y R N)
+```
+Draw the outline of a regular N-gon for integer N > 2, whose center is at (X, Y) with one of the vertices at
+(X + R, Y).
+```
+(filledngon X Y R N)
+```
+Same as ngon, but fill the ngon rather than simply drawing its boundary.
 
 ### Transformation Elements
 
@@ -37,6 +88,11 @@ Translate the following picture element by X units along the x-axis, and Y units
 (rotate X)
 ```
 Rotate the following picture element by X degrees about the origin.
+```
+(scale S)
+```
+Scale the following picture element by a factor of S, where S > 0. If (X ,Y) was a vertice on the picture,
+then its new coordinate after scaling is (X * S, Y * S).
 
 ### Drawing Parameters
 
@@ -101,6 +157,11 @@ X Y lineto
 ```
 Add a line segment to the current path starting at the current point and going to (X, Y), which becomes the
 new current point.
+```
+fill
+```
+Fill the interior of the current line path with the current color. Clear the current path and set the current
+point to undefined.
 ```
 stroke
 ```
