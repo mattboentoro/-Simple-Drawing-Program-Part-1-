@@ -53,5 +53,15 @@ Set the current line width to W, which must be a non-negative number. This meani
 as that of PostScript, meaning you can pass this value directly to PostScript commands. The initial value
 of the line width is 1.
 
+## Examples
+
 Zero or more whitespaces are allowed between a parenthesis and the start or end of a command, and between
 commands. At least one character of whitespace is required to separate arguments within a command.
+
+For example, the following would draw a thick blue square, rotated 45 degrees.
+
+```
+(linewidth 5)
+(color 0 0 1)
+(rotate 45)(rect 100 100 100 100)
+```
