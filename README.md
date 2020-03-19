@@ -36,3 +36,22 @@ Translate the following picture element by X units along the x-axis, and Y units
 ```
 (rotate X)
 ```
+Rotate the following picture element by X degrees about the origin.
+
+### Drawing Parameters
+
+Create drawing parameters using the commands below.
+```
+(color R G B)
+```
+Set the current color to (R,G,B). The arguments must be numbers between 0 and 1, inclusive. Initially, R =
+G = B = 0 (i.e. black).
+```
+(linewidth W)
+```
+Set the current line width to W, which must be a non-negative number. This meaning of this width value is
+as that of PostScript, meaning you can pass this value directly to PostScript commands. The initial value
+of the line width is 1.
+
+Zero or more whitespaces are allowed between a parenthesis and the start or end of a command, and between
+commands. At least one character of whitespace is required to separate arguments within a command.
