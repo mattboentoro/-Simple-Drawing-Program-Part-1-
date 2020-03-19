@@ -53,7 +53,7 @@ Set the current line width to W, which must be a non-negative number. This meani
 as that of PostScript, meaning you can pass this value directly to PostScript commands. The initial value
 of the line width is 1.
 
-## Examples
+## Input Examples
 
 Zero or more whitespaces are allowed between a parenthesis and the start or end of a command, and between
 commands. At least one character of whitespace is required to separate arguments within a command.
@@ -65,3 +65,26 @@ For example, the following would draw a thick blue square, rotated 45 degrees.
 (color 0 0 1)
 (rotate 45)(rect 100 100 100 100)
 ```
+
+## PostScript
+The output of your program will be a PostScript document. You can view a PostScript file with any PostScript
+viewer. A popular one is gv available on Linux. A PostScript file has the following form:
+```
+%!PS-Adobe-3.1
+commands
+showpage
+```
+The commands of the PostScript language are in postfix notation. The actual PostScript language is free form,
+meaning operands and operators can be separated by arbitrary whitespace. Your output, however, must mimic
+the reference program to make your program easier to debug and grade. Each command will start on a newline
+with operands separated by a single space.
+
+The origin of a PostScript starts at (0,0) in the lower left corner, with x-coordinates increasing to the right and ycoordinates
+increasing to the top. To draw something, one builds a path, and then strokes it. The PostScript
+interpreter maintains a graphics state, which for our purposes consists of
+
+..* A current point, (x,y) coordinate, which is initially undefined.
+..* A current path.
+..* A current color, a 3-tuple (r,g,b), where each color intensity r,g,b is between 0 and 1 inclusive. (0,0,0) is
+black and (1,1,1) is white.
+..* A current line thickness, which indicates the thickness of lines drawn when stroking.
